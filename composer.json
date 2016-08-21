@@ -14,7 +14,7 @@
   },
   "autoload": {
     "psr-4": {
-      "LINE\\": "src/"
+      "LINE\\": "sdk/"
     }
   }
 }
