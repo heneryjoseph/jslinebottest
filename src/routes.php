@@ -62,7 +62,7 @@ $app->post('/callback', function (Request $req, Response $res, $arg) {
                         ))
                         ->addImage($contact['pictureUrl'], $contact['pictureUrl'])
                         ->addSticker(mt_rand(0, 10), 1, 100);
-					$bot->sendText($receive->getFromMid(), $receive->getFromMid());
+					$bot->sendText($receive->getFromMid(), $contact['displayName']);
                     $bot->sendMultipleMessages($receive->getFromMid(), $multipleMsgs);
                 } else {
                     $bot->sendText($receive->getFromMid(), $receive->getText());
