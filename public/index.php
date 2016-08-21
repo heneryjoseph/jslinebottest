@@ -25,6 +25,3 @@ require __DIR__ . '/../src/dependencies.php';
 require __DIR__ . '/../src/routes.php';
 
 $app->run();
-?>
-
-<h1>Index</h1>
