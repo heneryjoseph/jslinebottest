@@ -52,6 +52,7 @@ $app->post('/callback', function (Request $req, Response $res, $arg) {
             if ($receive->isText()) {
                 /** @var Text $receive */
                 if ($receive->getText() === 'me') {
+                	$bot->sendText($receive->getFromMid(), 'checking...');
                     $ret = $bot->getUserProfile($receive->getFromMid());
                     $contact = $ret['contacts'][0];
                     $multipleMsgs = (new MultipleMessages())
