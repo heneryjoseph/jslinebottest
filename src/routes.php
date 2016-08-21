@@ -59,9 +59,9 @@ $app->post('/callback', function (Request $req, Response $res, $arg) {
                             'Hello! %s san! Your status message is %s',
                             $contact['displayName'],
                             $contact['statusMessage']
-                        ));
+                        ))
                         //->addImage($contact['pictureUrl'], $contact['pictureUrl'])
-                        //->addSticker(mt_rand(0, 10), 1, 100);
+                        ->addSticker(mt_rand(0, 10), 1, 100);
 					//$bot->sendText($receive->getFromMid(), $contact['displayName']);
                     $bot->sendMultipleMessages($receive->getFromMid(), $multipleMsgs);
                 } else {
