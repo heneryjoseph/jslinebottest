@@ -52,7 +52,6 @@ $app->post('/callback', function (Request $req, Response $res, $arg) {
             if ($receive->isText()) {
                 /** @var Text $receive */
                 if ($receive->getText() === 'me') {
-                	$bot->sendText($receive->getFromMid(), 'checking...');
                     $ret = $bot->getUserProfile($receive->getFromMid());
                     $contact = $ret['contacts'][0];
                     $multipleMsgs = (new MultipleMessages())
@@ -63,6 +62,7 @@ $app->post('/callback', function (Request $req, Response $res, $arg) {
                         ))
                         ->addImage($contact['pictureUrl'], $contact['pictureUrl'])
                         ->addSticker(mt_rand(0, 10), 1, 100);
+					$bot->sendText($receive->getFromMid(), $receive->getFromMid());
                     $bot->sendMultipleMessages($receive->getFromMid(), $multipleMsgs);
                 } else {
                     $bot->sendText($receive->getFromMid(), $receive->getText());
