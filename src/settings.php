@@ -17,11 +17,12 @@
 return [
     'settings' => [
         'displayErrorDetails' => true, // set to false in production
-
-        'logger' => [
+        
+'logger' => [
             'name' => 'slim-app',
-            'path' => __DIR__ . '/logs/app.log',
+            'path' => __DIR__ . '/../logs/app.log',
         ],
+
 
         'bot' => [
             'channelId' => '1477692710',
