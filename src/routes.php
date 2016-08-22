@@ -27,6 +27,7 @@ use Slim\Http\Request;
 use Slim\Http\Response;
 
 $app->post('/callback', function (Request $req, Response $res, $arg) {
+error_log("hello, this is a test!");
     $body = $req->getBody();
     $signatureHeader = $req->getHeader('X-LINE-ChannelSignature');
     if (empty($signatureHeader) || !$this->bot->validateSignature($body, $signatureHeader[0])) {
@@ -131,5 +132,5 @@ $app->post('/callback', function (Request $req, Response $res, $arg) {
     }
 
     return $res->getBody()->write("OK");
-    error_log("hello, this is a test!");
+
 });
