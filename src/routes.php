@@ -42,6 +42,14 @@ $app->post('/callback', function (Request $req, Response $res, $arg) {
     foreach ($receives as $receive) {
         if ($receive->isMessage()) {
             /** @var Message $receive */
+            
+            $this->logger->pushHandler(new StreamHandler('php://stderr', Logger::WARNING));
+			$this->logger->addWarning(sprintf(
+                'contentId=%s, fromMid=%s, createdTime=%s',
+                $receive->getContentId(),
+                $receive->getFromMid(),
+                $receive->getCreatedTime()
+            ));
 
             $this->logger->info(sprintf(
                 'contentId=%s, fromMid=%s, createdTime=%s',
