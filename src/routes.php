@@ -131,4 +131,5 @@ $app->post('/callback', function (Request $req, Response $res, $arg) {
     }
 
     return $res->getBody()->write("OK");
+    error_log("hello, this is a test!");
 });
