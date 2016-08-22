@@ -24,9 +24,9 @@ return [
         ],
 
         'bot' => [
-            'channelId' => '1477928785',
-            'channelSecret' => '542ad1610142eb805f81684cb617d5c9',
-            'channelMid' => 'u3b2f6c546b9528d6a168b8c8741d0aa7',
+            'channelId' => '1477692710',
+            'channelSecret' => 'cb0befa78d1a4a35806f66621c7e145a',
+            'channelMid' => 'u8de9e8c0ce9d750af7169e23e9f1a8d3',
         ],
     ],
 ];
