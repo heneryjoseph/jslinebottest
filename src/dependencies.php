@@ -27,6 +27,13 @@ $container['logger'] = function ($c) {
     return $logger;
 };
 
+$container['logger2'] = function ($c) {
+    $settings = $c->get('settings')['logger'];
+    $logger2 = new Monolog\Logger('stdlog');
+    $logger2->pushHandler(new Monolog\Handler\StreamHandler('php://stderr', Monolog\Logger::WARNING));
+    return $logger2;
+};
+
 $container['bot'] = function ($c) {
     $settings = $c->get('settings')['bot'];
     $config = [
